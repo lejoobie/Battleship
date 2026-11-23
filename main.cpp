@@ -17,16 +17,34 @@ const char emptyChar = '-';
 const char hitChar = 'X';
 const char missChar = 'O';
 
+// I also want to try and make ship placement as random as possible, we'll see how it goes. No promises.
+// Declare lengths of ships here for later use. I dumbed down the lengths on some of them in order to make space on the grid.
+const int carrierLength = 4;
+const int battleLength = 3;
+const int cruiserLength = 2;
+const int subLength = 2;
+const int boatLength = 2;
+
 // The game board will be a 2D array, populated later in the initializeGame function when called.
 string gameBoard[boardSize][boardSize];
 
+// Enemy positions will be stored in a 2D array identical to the game board, but will not be shown.
+// Rubric indicates array will be populated with true statements where ships exist.
+bool enemyPositions[boardSize][boardSize];
+
 // Implementation of required functions per rubric.
 // initializeGame will fill our game board with the appropriate values for the start of the game.
-void initializeGame() {    
-}
+// This will also populate the enemyPositions array with the locations of the enemy ships.
+void initializeGame() {
+    // Fill the board with empty characters to represent unoccupied spaces.
+
+    // Generate enemy ship positions.
+
+    }
+    
 // printGameBoard will print the current state of the game board to the console.
 void printGameBoard() {
-
+    
 }
 // hasShotThere is a check function in which it will ensure that the player's selected shot is not already used.
 bool hasShotThere() {
