@@ -26,7 +26,7 @@ const int subLength = 2;
 const int boatLength = 2;
 
 // The game board will be a 2D array, populated later in the initializeGame function when called.
-string gameBoard[boardSize][boardSize];
+char gameBoard[boardSize][boardSize];
 
 // Enemy positions will be stored in a 2D array identical to the game board, but will not be shown.
 // Rubric indicates array will be populated with true statements where ships exist.
@@ -36,15 +36,47 @@ bool enemyPositions[boardSize][boardSize];
 // initializeGame will fill our game board with the appropriate values for the start of the game.
 // This will also populate the enemyPositions array with the locations of the enemy ships.
 void initializeGame() {
+
+    // Local increment variables seperate from all other scopes of the program.
+    // This may repeat in other functions.
+    int i;
+    int j;
+
     // Fill the board with empty characters to represent unoccupied spaces.
+    for (i = 0; i < boardSize; i++){
+        for (j = 0; j < boardSize; j++){
+            gameBoard[i][j] = emptyChar;
+        }
+    }
 
     // Generate enemy ship positions.
 
+    return;
+
     }
-    
+
 // printGameBoard will print the current state of the game board to the console.
 void printGameBoard() {
-    
+
+    int i;
+    int j;
+    // K is introduced to keep track of the label of the rows.
+    int k = 1;
+
+    // Print full board with labels.
+    cout << "  A B C D E F G" << endl;
+
+    for (i = 0; i < boardSize; i++){
+        cout << k << " ";
+        for (j = 0; j < boardSize; j++){
+            cout << gameBoard[i][j] << " ";
+        }
+        cout << endl;
+        k = (k + 1);
+    }
+
+    return;
+
 }
 // hasShotThere is a check function in which it will ensure that the player's selected shot is not already used.
 bool hasShotThere() {
@@ -71,6 +103,7 @@ void recordGame() {
 
 int main() {
     // So I know the program is running fine for now.
-    cout << "Welcome to Battleship!" << endl;
+    initializeGame();
+    printGameBoard();
     return 0;
 }
